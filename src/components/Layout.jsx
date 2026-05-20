@@ -29,7 +29,7 @@ export default function Layout({ children, user }) {
             <div className="flex items-center gap-4">
               <Link to="/" className="flex items-center gap-3">
                 <img
-                 src="/trustme-logov3.png"
+                 src="public/trustme logov3.png"
                  alt="Trust Me Brother"
                   className="
                   w-20 
