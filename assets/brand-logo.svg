@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 256 256" role="img" aria-label="Trust Me Brother logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="36" fill="#fff"/>
+  <g transform="translate(36,36)">
+    <circle cx="52" cy="52" r="52" fill="url(#g)" />
+    <path d="M30 44c6 6 16 6 22 0" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M20 68c10-8 34-8 44 0" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <g transform="translate(110,0)">
+      <text x="0" y="48" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="36" fill="#0f172a">TRUST</text>
+      <text x="0" y="88" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="36" fill="#047857">ME</text>
+      <text x="78" y="88" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="36" fill="#0f172a">BROTHER</text>
+    </g>
+  </g>
+</svg>
