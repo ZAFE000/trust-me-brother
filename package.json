@@ -3,14 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+
   "homepage": "https://ZAFE000.github.io/trust-me-brother/",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+
   "dependencies": {
     "dexie": "^4.4.2",
     "dexie-react-hooks": "^4.4.0",
@@ -19,6 +24,7 @@
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
