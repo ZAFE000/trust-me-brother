@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables for better contrast and smooth transitions */
+:root {
+  --bg: #f3f4f6;
+  --text: #111827;
+  --card: #ffffff;
+  --muted-border: #e5e7eb;
+  --muted-text: #6b7280;
+}
+
+html.dark {
+  --bg: #071028; /* deeper background */
+  --text: #f8fafc;
+  --card: #0b1224; /* slightly lighter than background for better contrast */
+  --muted-border: #1f2937;
+  --muted-text: #cbd5e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* legacy dark rules replaced by variables above; keep for specificity if needed */
+html.dark body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html.dark body, html.dark body p, html.dark body span, html.dark body h1, html.dark body h2, html.dark body h3,
+html.dark body h4, html.dark body h5, html.dark body h6, html.dark body a, html.dark body li, html.dark body label,
+html.dark body button {
+  color: #e2e8f0;
+}
+
+html.dark .bg-white {
+  background-color: var(--card) !important;
+}
+
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-slate-100 {
+  background-color: #11202b !important;
+}
+
+html.dark .bg-gray-200,
+html.dark .bg-gray-300,
+html.dark .bg-slate-200 {
+  background-color: #374151 !important;
+}
+
+html.dark .border-gray-200,
+html.dark .border-gray-300,
+html.dark .border-gray-400,
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-slate-400 {
+  border-color: var(--muted-border) !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-slate-500 {
+  color: var(--muted-text) !important;
+}
+
+/* Ensure common text utility classes remain readable in dark mode */
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700,
+html.dark .text-gray-600,
+html.dark .text-gray-500,
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: var(--text) !important;
+}
+
+html.dark .text-gray-900,
+html.dark .text-slate-900,
+html.dark .text-black {
+  color: var(--text) !important;
+}
+
+html.dark .bg-green-200,
+html.dark .hover\:bg-green-200:hover {
+  background-color: #166534 !important;
+}
+
+html.dark .bg-gray-200:hover,
+html.dark .bg-gray-300:hover,
+html.dark .hover\:bg-gray-300:hover {
+  background-color: #4b5563 !important;
+}
+
+html.dark .bg-gray-50:hover,
+html.dark .bg-gray-100:hover {
+  background-color: #1f2937 !important;
+}
+
+/* Smooth transitions */
+button, a, input, textarea, select, .card, .btn-primary, .btn-secondary {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 200ms ease;
+}
+
+/* Card styles */
+.card {
+  @apply rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300;
+  background-color: var(--card);
+  border: 1px solid var(--muted-border);
+  color: var(--text);
+}
+
+html.dark .card {
+  background-color: var(--card) !important;
+  border-color: var(--muted-border) !important;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-all duration-200;
+}
+
+html.dark .btn-secondary {
+  background-color: #0f1724;
+  color: #e6eef8;
+}
+
+/* Star rating */
+.star {
+  @apply text-yellow-400 text-lg;
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition-all;
+}
+
+html.dark .input-field {
+  background-color: #071026;
+  border-color: #24303b;
+  color: #e6eef8;
+  box-shadow: none;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #22c55e;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive grid */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Keep Login card bright in dark mode for better contrast */
+html.dark .login-page .card,
+html.dark .login-page .bg-white {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.45) !important;
+}
+
+html.dark .login-page h1,
+html.dark .login-page h2,
+html.dark .login-page p,
+html.dark .login-page .text-gray-600,
+html.dark .login-page .text-gray-700,
+html.dark .login-page .text-gray-800 {
+  color: #0f172a !important;
+}
+
+html.dark .login-page {
+  /* keep page background subtle but allow bright card */
+  background: linear-gradient(135deg, #07172a 0%, #081428 100%);
+}
+
+/* Force readable text inside cards and nav in dark mode */
+html.dark .card,
+html.dark .card *,
+html.dark nav,
+html.dark nav * {
+  color: var(--text) !important;
+}
+
+/* Ensure general utilities inside main content use readable text in dark */
+html.dark main,
+html.dark main * {
+  color: var(--text) !important;
+}
+
+/* Stronger, explicit login page contrast in dark mode */
+/* Login card: keep card bright and its internal text dark */
+html.dark .login-page .bg-white,
+html.dark .login-page .rounded-2xl,
+html.dark .login-page .shadow-2xl,
+html.dark .login-page .fade-in {
+  background-color: #f8fafc !important;
+}
+
+html.dark .login-page .bg-white,
+html.dark .login-page .bg-white *,
+html.dark .login-page .rounded-2xl *,
+html.dark .login-page .shadow-2xl * {
+  color: #0f172a !important;
+}
+
+/* Hero & features (outside the card) should be light on the dark gradient */
+html.dark .login-page .text-center > h1,
+html.dark .login-page .text-center > p,
+html.dark .login-page .text-center > .mt-16,
+html.dark .login-page .text-center > .mt-16 *,
+html.dark .login-page .text-6xl,
+html.dark .login-page .text-4xl {
+  color: var(--text) !important;
+}
+
+/* Ensure login buttons/SVGs render correctly */
+html.dark .login-page button {
+  color: inherit !important;
+}
+html.dark .login-page button svg { fill: currentColor !important; }
